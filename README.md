@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Design System Lab 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional **React Component Library** built with **TypeScript**, **Material UI (MUI)**, and **Framer Motion**. This library focuses on high-quality, interactive UI components and smooth animations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Installation
 
-## React Compiler
+This library is hosted as a **private repository** on GitHub. To add it to your project, use the following command:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install git+[https://github.com/Paularix/design-system-lab.git](https://github.com/Paularix/design-system-lab.git)
+Note: Since the repository is private, ensure your environment is authenticated with GitHub (using a Personal Access Token or SSH key).🛠 UsageTo use the components, simply import them along with the color constants from the library:TypeScriptimport { InteractiveRevealCard, ActionButton, colors } from 'design-system-lab';
 
-## Expanding the ESLint configuration
+const MyComponent = () => {
+  return (
+    <InteractiveRevealCard 
+      title="Paula Marcos"
+      subtitle="Engineering & Design"
+      accentColor={colors.purple}
+      tags={['React', 'Vite', 'Design System']}
+      href="[https://github.com/Paularix](https://github.com/Paularix)"
+    />
+  );
+};
+🧪 Development WorkflowIf you want to contribute or modify components, follow these steps:1. Run StorybookTo view and test components in isolation:Bashnpm run storybook
+2. Update and ExportAdd your components in src/components/.Export them in src/index.ts so they are accessible from the outside.3. Build for ProductionCrucial: Before pushing changes to GitHub, you MUST update the distribution folder:Bashnpm run build
+This command generates the dist/ folder containing the compiled JavaScript and TypeScript definitions.4. Push to GitHubBashgit add .
+git commit -m "feat: added new interactive component"
+git push origin main
+🧱 Project StructureFolderDescriptiondist/Production Files. The actual code consumed by other apps.src/components/atomsSmallest components (Buttons, Links).src/components/moleculesCombined atoms with simple logic (Menus, Accordions).src/components/organismsComplex components (Cards, Layout containers).src/themeShared design tokens and color constants.⚠️ Requirements (Peer Dependencies)Your host project should have the following dependencies installed to avoid version conflicts:react >= 18.0.0@mui/material >= 5.0.0framer-motion >= 10.0.0@emotion/react & @emotion/styled >= 11.0.0📄 LicensePrivate - All rights reserved.
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Cómo aplicarlo:
+1. Abre tu archivo `README.md` en VS Code.
+2. Borra todo lo que hay (el texto de Vite).
+3. Pega este nuevo contenido.
+4. En la terminal, guarda y sube:
+   ```bash
+   git add README.md
+   git commit -m "docs: professional readme update"
+   git push origin main
