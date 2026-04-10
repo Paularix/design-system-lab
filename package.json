@@ -1,5 +1,6 @@
 {
   "name": "design-system-lab",
+  "homepage": "https://Paularix.github.io/design-system-lab",
   "version": "1.0.0",
   "private": false,
   "description": "Custom design system library with MUI and Framer Motion",
@@ -23,7 +24,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static"
   },
   "peerDependencies": {
     "@emotion/react": ">=11",
@@ -34,7 +37,9 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "@mui/icons-material": "^7.3.9"
+    "@mui/icons-material": "^7.3.9",
+    "gh-pages": "^6.3.0",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
